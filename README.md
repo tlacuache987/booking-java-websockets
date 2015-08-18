@@ -6,7 +6,7 @@ because this project use it. For more information www.projectlombok.org or searc
 
 You need:
 
-Java 6 or 7
+Java 6 or 7<br />
 Tomcat 7
 Maven 3.2.x
 
