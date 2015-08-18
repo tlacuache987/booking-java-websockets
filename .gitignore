@@ -1,0 +1,13 @@
+﻿# Ignores
+\.DS_Store
+\.classpath
+\.project
+\.settings
+\.metadata/
+Servers/
+target/
+node_modules/
+*.iml
+*.ipr
+*.iws
+.idea/
