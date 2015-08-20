@@ -3,8 +3,7 @@ package com.assuredlabor.ws;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,13 +26,13 @@ public class BookingGroceryWebSocketServlet extends WebSocketServlet {
 
 	private static final long serialVersionUID = -5630167933431806651L;
 
-	private static List<OrderMessageInbound> orderMessageInboundList = new ArrayList<OrderMessageInbound>();
+	private static Vector<OrderMessageInbound> orderMessageInboundList = new Vector<OrderMessageInbound>();
 
 	private static Gson gson = new Gson();
-	private static List<StockItem> fruitList;
+	private static Vector<StockItem> fruitList;
 
 	static {
-		fruitList = new ArrayList<StockItem>();
+		fruitList = new Vector<StockItem>();
 		fruitList.add(new StockItem("apple", 110));
 		fruitList.add(new StockItem("pineapple", 210));
 		fruitList.add(new StockItem("lemon", 310));
@@ -41,6 +40,10 @@ public class BookingGroceryWebSocketServlet extends WebSocketServlet {
 		fruitList.add(new StockItem("melon", 510));
 		fruitList.add(new StockItem("watermelon", 610));
 		fruitList.add(new StockItem("pear", 710));
+	}
+
+	public BookingGroceryWebSocketServlet() {
+		log.info("Construyend BookingGroceryWebSocketServlet");
 	}
 
 	private class OrderMessageInbound extends MessageInbound {
